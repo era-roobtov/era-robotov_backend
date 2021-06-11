@@ -5,7 +5,7 @@ const gmailInputData = require('../configs/gmail_input_data.json');
 const nodemailer = require('nodemailer')
 const smtpTransport = require('nodemailer-smtp-transport')
 
-const MAIL_TO_ADRESS = 'nik_manz@mail.ru';
+const MAIL_TO_ADRESS = 'ageofrobotov@gmail.com';
 
 class Mailer {
     async testMail(mail: Mail): Promise<boolean> {
@@ -19,10 +19,10 @@ class Mailer {
             }))
 
             let result = await transporter.sendMail({
-                from: '"Node js" <nodejs@example.com>',
+                from: `"Era robotov" ${gmailInputData.login}`,
                 to: MAIL_TO_ADRESS,
-                subject: 'Новый ученик',
-                text: `Имя: ${mail.name}, почта: ${mail.email}, телефон: ${mail.telephoneNumber}, курсы: ${mail.courses}`,
+                subject: 'Новая заявка на курсы',
+                text: `Поступила новая заявка на курсы. Данные для связи: имя: ${mail.name}, почта: ${mail.email}, телефон: ${mail.telephoneNumber}, курсы: ${mail.courses}`,
             })
 
             return true;
