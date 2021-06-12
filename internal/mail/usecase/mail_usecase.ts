@@ -3,7 +3,10 @@ import Mailer from '../../../components/mail'
 
 class MailUsecase {
     async sendMail(mail: Mail): Promise<boolean> {
-        return await Mailer.testMail(mail);
+        if (mail.aos == undefined || mail.aos == "") {
+            return await Mailer.testMail(mail);
+        }
+        return false;
     }
 }
 

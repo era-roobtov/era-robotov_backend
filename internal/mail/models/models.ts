@@ -3,4 +3,5 @@ export interface Mail {
     email?: string;
     telephoneNumber?: string;
     courses?: string[];
+    aos?: string;
 }
