@@ -19,7 +19,7 @@ app.addContentTypeParser('application/json',
         }
     });
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, '127.0.0.1', () => {
     console.log(`Started on port ${port}`);
 });
 
