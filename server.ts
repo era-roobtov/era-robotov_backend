@@ -5,7 +5,7 @@ const port: number = 5000;
 const app = require('fastify')({});
 
 app.register(require('fastify-cors'), {
-    origin: "*",
+    origin: ["http://era-robotov.ru", "https://era-robotov.ru"],
     methods: ["POST"]
 })
 
