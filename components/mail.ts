@@ -22,8 +22,7 @@ class Mailer {
                 from: `"Era robotov" ${gmailInputData.login}`,
                 to: MAIL_TO_ADRESS,
                 subject: 'Новая заявка на курсы',
-                text: `Поступила новая заявка на курсы. Данные для связи: ФИО: ${mail.name}, почта: ${mail.email}, 
-                    телефон: ${mail.telephoneNumber}, пол: ${mail.sex}, возраст: ${mail.age}, курсы: ${mail.course.title}`,
+                text: `Поступила новая заявка на курсы. Данные для связи: ФИО: ${mail.name}, почта: ${mail.email}, телефон: ${mail.telephoneNumber}, пол: ${mail.sex}, возраст: ${mail.age}, курсы: ${mail.course.title}`,
             })
 
             return true;
