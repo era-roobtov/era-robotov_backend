@@ -5,10 +5,10 @@ const gmailInputData = require('../configs/gmail_input_data.json');
 const nodemailer = require('nodemailer')
 const smtpTransport = require('nodemailer-smtp-transport')
 
-const MAIL_TO_ADRESS = 'ageofrobotov@gmail.com';
+const MAIL_TO_ADRESS = 'erarobotov@yandex.ru';
 
 class Mailer {
-    async testMail(mail: Mail): Promise<boolean> {
+    async sendMail(mail: Mail): Promise<boolean> {
         try{
             const transporter = nodemailer.createTransport(smtpTransport({
                 service: 'gmail',
@@ -22,7 +22,8 @@ class Mailer {
                 from: `"Era robotov" ${gmailInputData.login}`,
                 to: MAIL_TO_ADRESS,
                 subject: 'Новая заявка на курсы',
-                text: `Поступила новая заявка на курсы. Данные для связи: имя: ${mail.name}, почта: ${mail.email}, телефон: ${mail.telephoneNumber}, курсы: ${mail.courses}`,
+                text: `Поступила новая заявка на курсы. Данные для связи: ФИО: ${mail.name}, почта: ${mail.email}, 
+                    телефон: ${mail.telephoneNumber}, пол: ${mail.sex}, возраст: ${mail.age}, курсы: ${mail.course.title}`,
             })
 
             return true;
