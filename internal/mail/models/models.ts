@@ -9,5 +9,4 @@ export interface Mail {
     sex?: string,
     age?: number,
     course?: Course;
-    aos?: string;
 }
