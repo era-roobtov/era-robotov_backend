@@ -25,6 +25,7 @@ class Mailer {
                 text: `Поступила новая заявка на курсы. Данные для связи: ФИО: ${mail.name}, почта: ${mail.email}, телефон: ${mail.telephoneNumber}, пол: ${mail.sex}, возраст: ${mail.age}, курсы: ${mail.course.title}`,
             })
 
+            logger.fatal('OK in Mailer class OK!')
             return true;
         } catch (e) {
             logger.fatal(`Error in Mailer class: ${e.message}`);
