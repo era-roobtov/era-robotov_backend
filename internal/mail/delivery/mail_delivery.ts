@@ -12,7 +12,7 @@ class MailDelivery {
             if (isOk) {
                 res.code(200).send({status: 'OK'});
             } else {
-                res.code(400).send({message: 'Bad Request'});
+                res.code(400).send({message: `Bad Request test message ${isOk}`});
             }
         } catch (e) {
             logger.fatal(`Error in MailDelivery class: ${e.message}`)
